@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
-    public float speed = 5f;
+    public float speed = 0f;
+    [SerializeField] float accleration = 0f;
+    [SerializeField] float decleration = 0f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float groundYOffset;
     [SerializeField] LayerMask groundMask;
@@ -25,9 +27,15 @@ public class PlayerMovement : MonoBehaviour
     void Move(){
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        //Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
-        dir = transform.forward * vertical + transform.right * horizontal;
-
+        dir = (transform.forward * vertical + transform.right * horizontal).normalized;
+        if (dir.magnitude > 0.1f && speed<=5f)
+        {
+            speed += Time.deltaTime * accleration;
+        }
+        if(dir.magnitude<0.1f && speed > 0f)
+        {
+            speed -= Time.deltaTime * decleration;
+        }
         controller.Move(dir * speed * Time.deltaTime);
     }
     bool IsGrounded()
