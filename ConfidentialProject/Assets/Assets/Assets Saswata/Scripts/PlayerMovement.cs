@@ -3,7 +3,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController controller;
-    public float speed = 0f;
+    public float currentSpeed = 0f;
+    [SerializeField]float walkSpeed = 3f;
+    public float speed;
+    [SerializeField] float sprintSpeed = 6f;
     [SerializeField] float accleration = 0f;
     [SerializeField] float decleration = 0f;
     [SerializeField] float gravity = -9.81f;
@@ -12,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 spherePos;
     Vector3 velocity;
     Vector3 dir;
+    [SerializeField] bool isSprinting;
     
 
     void Start()
@@ -23,12 +27,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         Gravity();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isSprinting = false;
+        }
     }
     void Move(){
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         dir = (transform.forward * vertical + transform.right * horizontal).normalized;
-        if (dir.magnitude > 0.1f && speed<=5f)
+        currentSpeed = isSprinting? sprintSpeed : walkSpeed;
+        if (dir.magnitude > 0.1f && speed<=currentSpeed)
         {
             speed += Time.deltaTime * accleration;
         }
@@ -36,6 +49,16 @@ public class PlayerMovement : MonoBehaviour
         {
             speed -= Time.deltaTime * decleration;
         }
+        if(isSprinting && speed>currentSpeed)
+        {
+            speed = currentSpeed;
+        }
+        else if(!isSprinting && speed>currentSpeed)
+        {
+            speed -= Time.deltaTime * decleration;
+        }
+
+
         controller.Move(dir * speed * Time.deltaTime);
     }
     bool IsGrounded()
