@@ -77,31 +77,7 @@ public class AnimatorController : MonoBehaviour
             velocityZ = 0.0f;
         }
 
-        if(backPressed && forwardPressed)
-        {
-            if(velocityZ>0.0f)
-            {
-                velocityZ -= Time.deltaTime * decleration;
-            }
-            if (velocityZ < 0.0f)
-            {
-                velocityZ += Time.deltaTime * accleration;
-            }
-            
-        }
-
-
-        if(leftPressed && rightPressed)
-        {
-            if(velocityX>0.0f)
-            {
-                velocityX -= Time.deltaTime * decleration;
-            }
-            if (velocityX < 0.0f)
-            {
-                velocityX += Time.deltaTime * accleration;
-            }
-        }
+        
 
         if(forwardPressed && runPressed && velocityZ > currentMaxVelocity)
         {
@@ -157,7 +133,32 @@ public class AnimatorController : MonoBehaviour
         {
             velocityX = -currentMaxVelocity;
         }
+        if(backPressed && forwardPressed)
+        {
+            if(velocityZ>0.0f)
+            {
+                velocityZ -= Time.deltaTime * decleration;
+            }
+            if (velocityZ < 0.0f)
+            {
+                velocityZ += Time.deltaTime * accleration;
+            }
+            
+        }
 
+
+        if(leftPressed && rightPressed)
+        {
+            if(velocityX>0.0f)
+            {
+                velocityX -= Time.deltaTime * decleration;
+            }
+            if (velocityX < 0.0f)
+            {
+                velocityX += Time.deltaTime * accleration;
+            }
+        }
+        
         anim.SetFloat("VelocityZ", velocityZ);
         anim.SetFloat("VelocityX",velocityX);
     }
