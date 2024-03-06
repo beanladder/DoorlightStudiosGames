@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float currentSpeed = 0f;
     [SerializeField]float walkSpeed = 3f;
     public float speed;
+    [SerializeField] public float StandingHeight;
     [SerializeField] float sprintSpeed = 6f;
     [SerializeField] float accleration = 0f;
     [SerializeField] float decleration = 0f;
@@ -21,12 +22,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        StandingHeight = controller.height;
     }
 
     void Update()
     {
         Move();
         Gravity();
+
+        //check for running
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isSprinting = true;
@@ -35,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isSprinting = false;
         }
+        //check for crouching
+
     }
     void Move(){
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -81,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
         controller.Move(velocity * Time.deltaTime);
+    }
+    void Crouch()
+    {
+
     }
 }
 
