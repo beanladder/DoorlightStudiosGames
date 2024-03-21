@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e251860fcd970734c9f14ebd98a146c3, type: 3}
+  m_Name: GS-20240308 - 212444
+  m_EditorClassIdentifier: 
+  m_name: Session 20240308-212444
+  m_description: 'Rocking out at Creativity Central!
+
+
+    If you like Gaia please
+    consider rating it :)'
+  m_previewImage: {fileID: 0}
+  m_dateCreated: 08-03-2024 21:24:44
+  m_terrainWidth: 512
+  m_terrainDepth: 512
+  m_terrainHeight: 512
+  m_seaLevel: 2
+  m_spawnDensity: 0.8
+  m_isLocked: 0
+  m_previewImageBytes: 
+  m_previewImageWidth: 0
+  m_previewImageHeight: 0
+  m_operations:
+  - m_description: Clear World
+    m_operationType: 10
+    m_isActive: 1
+    m_affectedTerrainNames: []
+    m_operationDateTime: 08-03-2024 21:27:38
+    scriptableObjectAssetGUID: 
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Creating World: 1 x 1 tiles, tile size: 1024'
+    m_operationType: 0
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20240308 - 212738
+    m_operationDateTime: 08-03-2024 21:27:38
+    scriptableObjectAssetGUID: 70cd439cc61b429499aac24a4d1b555e
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (10)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20240308 - 212738
+    m_operationDateTime: 08-03-2024 21:41:21
+    scriptableObjectAssetGUID: 1ab58674f8f7f99459cfe380a51586a4
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  m_terrainMinMaxCache:
+  - guid: 49f546a2fa25e2a4c9cbdec0abaa1169
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 19.875303
+  - guid: Worldmap
+    isWorldmap: 1
+    recalculate: 0
+    min: 0
+    max: 0
+  m_bakedMaskCacheEntries:
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3584_3
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3584_3
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3584_3
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3584_4
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3584_4
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3584_4
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerTree_3584_-3
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerTree_3584_-3
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerTree_3584_-3
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3584_5
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3584_5
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3584_5
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerTree_3584_0
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerTree_3584_0
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerTree_3584_0
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3584_2
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3584_2
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3584_2
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerTree_3584_-2
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerTree_3584_-2
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerTree_3584_-2
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3072_0.75
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3072_0.75
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3072_0.75
+    texture: {fileID: 0}
+  - fileName: Terrain_0_0-20240308 - 212738_LayerGameObject_3584_12
+    assetPath: Assets/Procedural Worlds/Packages - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308
+      - 212738/Terrain_0_0-20240308 - 212738_LayerGameObject_3584_12
+    fullPath: E:/Github/DoorlightStudios/ConfidentialProject/Assets/Procedural Worlds/Packages
+      - Install/Gaia/TerrainCollisionData/Terrain_0_0-20240308 - 212738/Terrain_0_0-20240308
+      - 212738_LayerGameObject_3584_12
+    texture: {fileID: 0}
+  m_worldBiomeMaskSettings: {fileID: 0}
