@@ -24,18 +24,41 @@ public class AnimatorController : MonoBehaviour
         bool rightPressed = Input.GetKey("d");
         bool backPressed = Input.GetKey("s");
         bool runPressed = Input.GetKey("left shift");
+        bool bothLeftAndRight = leftPressed&&rightPressed;
 
         float currentMaxVelocity = runPressed ? maxRunVelocity : maxWalkVelocity;
 
         if(forwardPressed && velocityZ<currentMaxVelocity)
         {
-            velocityZ += Time.deltaTime * accleration;
+            if(!backPressed){
+                velocityZ += Time.deltaTime * accleration;
+            }
+            else{
+                velocityZ-=Time.deltaTime*decleration;
+                if(velocityZ<0){
+                    velocityZ=0f;
+                }
+            }
+            
         }
 
-        if(backPressed && velocityZ > -currentMaxVelocity)
+        if (backPressed && velocityZ > -currentMaxVelocity)
         {
-            velocityZ -= Time.deltaTime * accleration;
+        // Check if both forward and backward keys are pressed
+            if (!forwardPressed)
+            {
+                velocityZ -= Time.deltaTime * accleration;
+            }
+            else
+            {
+                // Introduce a separate deceleration when both keys are pressed
+                velocityZ += Time.deltaTime*decleration;
+                if(velocityZ>0f){
+                    velocityZ = 0.0f;
+                }
+            }
         }
+
 
         if(leftPressed&& velocityX>-currentMaxVelocity)
         {
@@ -133,32 +156,9 @@ public class AnimatorController : MonoBehaviour
         {
             velocityX = -currentMaxVelocity;
         }
-        if(backPressed && forwardPressed)
-        {
-            if(velocityZ>0.0f)
-            {
-                velocityZ -= Time.deltaTime * decleration;
-            }
-            if (velocityZ < 0.0f)
-            {
-                velocityZ += Time.deltaTime * accleration;
-            }
-            
-        }
 
-
-        if(leftPressed && rightPressed)
-        {
-            if(velocityX>0.0f)
-            {
-                velocityX -= Time.deltaTime * decleration;
-            }
-            if (velocityX < 0.0f)
-            {
-                velocityX += Time.deltaTime * accleration;
-            }
-        }
         
+
         anim.SetFloat("VelocityZ", velocityZ);
         anim.SetFloat("VelocityX",velocityX);
     }
